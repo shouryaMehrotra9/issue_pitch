@@ -183,6 +183,238 @@ const DEFAULT_PRESETS = [
         }
       }
     ]
+  },
+  {
+    id: 'landlord-maintenance',
+    title: 'Landlord Repair Dispute',
+    scenario: 'Living & Housing',
+    description: 'Request Mr. Henderson to fix a leaking roof and black mold in your bathroom, which he has been ignoring for two weeks.',
+    objective: 'Secure a firm commitment to send a plumber within 48 hours without getting your rent raised.',
+    objectives: [
+      { id: 'mold', text: 'Clearly state the mold hazard and health implications' },
+      { id: 'rights', text: 'Reference the tenant rights clause or safety regulations' },
+      { id: 'date', text: 'Request a specific date and time for the maintenance visit' },
+      { id: 'firmness', text: 'Maintain a firm, respectful tone without threatening legal action prematurely' }
+    ],
+    hiddenObjectives: [
+      { id: 'self_pay', text: 'Avoid offering to pay for the repairs yourself' },
+      { id: 'formal', text: 'Keep the conversation formal to prevent personal deflection' }
+    ],
+    personas: [
+      {
+        id: 'henderson-landlord',
+        name: 'Mr. Henderson (The Evasive Landlord)',
+        relationship: 'Landlord',
+        prompt: `You are Mr. Henderson, a landlord. You are cheap, make excuses about maintenance costs, and try to blame the tenant for bathroom ventilation issues.`,
+        traits: {
+          formality: 50, verbosity: 40, interruptionFrequency: 50, emotionalVolatility: 60, startingTension: 50,
+          openness: 30, conscientiousness: 40, extraversion: 50, agreeableness: 30, neuroticism: 60
+        }
+      }
+    ]
+  },
+  {
+    id: 'employee-termination',
+    title: 'Employee Termination Meeting',
+    scenario: 'Workplace Leadership',
+    description: 'Fire your direct report Kevin for repeated performance lapses and missing critical project deadlines, despite prior warnings.',
+    objective: 'Deliver the termination clearly, explain severance terms, and retrieve company equipment without escalating conflict.',
+    objectives: [
+      { id: 'clear_firing', text: 'State the termination decision clearly in the first three sentences' },
+      { id: 'metrics', text: 'Reference past warning documents and metrics objectively' },
+      { id: 'severance', text: 'Explain the severance package and health insurance transition' },
+      { id: 'equipment', text: 'Set a deadline for returning the company laptop and badges' }
+    ],
+    hiddenObjectives: [
+      { id: 'apology', text: 'Avoid apologizing or saying "I\'m sorry" (to mitigate legal liability)' },
+      { id: 'neutrality', text: 'Remain neutral when Kevin gets emotional or begs for another chance' }
+    ],
+    personas: [
+      {
+        id: 'kevin-employee',
+        name: 'Kevin (The Underperforming Employee)',
+        relationship: 'Direct Report',
+        prompt: `You are Kevin, an employee being let go. You are shocked, defensive, blame team communication problems, and beg to keep your job.`,
+        traits: {
+          formality: 40, verbosity: 60, interruptionFrequency: 40, emotionalVolatility: 80, startingTension: 70,
+          openness: 40, conscientiousness: 30, extraversion: 60, agreeableness: 45, neuroticism: 75
+        }
+      }
+    ]
+  },
+  {
+    id: 'peer-feedback',
+    title: 'Peer Performance Review',
+    scenario: 'Management & Leadership',
+    description: 'Give constructive feedback to Maya, who is a great coder but behaves aggressively in team meetings and shuts down others\' ideas.',
+    objective: 'Help Maya acknowledge her behavior and agree to a collaborative communication plan.',
+    objectives: [
+      { id: 'appreciate', text: 'Acknowledge Maya\'s strong technical contributions first' },
+      { id: 'incidents', text: 'Describe specific meeting incidents where she interrupted peers' },
+      { id: 'impact', text: 'Explain the negative impact of her communication style on team morale' },
+      { id: 'followup', text: 'Mutually agree to a weekly feedback check-in' }
+    ],
+    hiddenObjectives: [
+      { id: 'firmness', text: 'Do not back down on the feedback when she gets defensive' },
+      { id: 'behavior', text: 'Keep the focus on behavior rather than attacking her personality' }
+    ],
+    personas: [
+      {
+        id: 'maya-engineer',
+        name: 'Maya (The Defensive Rock Star)',
+        relationship: 'Senior Engineer Colleague',
+        prompt: `You are Maya, a senior engineer. You believe you are just being direct and efficient, and feel others are too sensitive or slow.`,
+        traits: {
+          formality: 60, verbosity: 50, interruptionFrequency: 70, emotionalVolatility: 70, startingTension: 60,
+          openness: 60, conscientiousness: 80, extraversion: 65, agreeableness: 25, neuroticism: 55
+        }
+      }
+    ]
+  },
+  {
+    id: 'unpaid-debt',
+    title: 'Unpaid Debt Confrontation',
+    scenario: 'Personal Relationships',
+    description: 'Confront your close friend Dan about the $500 he borrowed three months ago to pay his rent, which he has not returned despite promises.',
+    objective: 'Secure a repayment schedule/timeline without ruining the friendship.',
+    objectives: [
+      { id: 'friendship', text: 'Express the value of the friendship before mentioning the money' },
+      { id: 'details', text: 'Clearly state the exact amount ($500) and the original agreement date' },
+      { id: 'installments', text: 'Propose a flexible payment plan (e.g., installments) if he is tight on cash' },
+      { id: 'firm_date', text: 'Get a firm date for the first repayment installment' }
+    ],
+    hiddenObjectives: [
+      { id: 'waive', text: 'Do not agree to waive the debt or write it off' },
+      { id: 'boundaries', text: 'Maintain boundaries if Dan attempts to guilt-trip you about his financial situation' }
+    ],
+    personas: [
+      {
+        id: 'dan-friend',
+        name: 'Dan (The Forgetful Friend)',
+        relationship: 'Close Friend',
+        prompt: `You are Dan, the user's friend. You feel embarrassed about your money issues, try to change the subject, and ask for more time.`,
+        traits: {
+          formality: 20, verbosity: 55, interruptionFrequency: 40, emotionalVolatility: 50, startingTension: 45,
+          openness: 55, conscientiousness: 35, extraversion: 70, agreeableness: 60, neuroticism: 60
+        }
+      }
+    ]
+  },
+  {
+    id: 'holiday-boundary',
+    title: 'Holiday Family Boundary',
+    scenario: 'Family Boundaries',
+    description: 'Tell your mother Linda that you will not be coming home for Thanksgiving this year because you need to rest and avoid travel stress.',
+    objective: 'Hold your boundary to stay home while assuring Linda of your love and proposing an alternative holiday call.',
+    objectives: [
+      { id: 'decision', text: 'State your decision clearly without making elaborate excuses' },
+      { id: 'validate_linda', text: 'Validate her disappointment and desire to see you' },
+      { id: 'alternative_call', text: 'Offer a specific day and time to do a video call during the holiday' },
+      { id: 'calmness', text: 'Remain calm and firm when she uses family pressure or guilt-trips' }
+    ],
+    hiddenObjectives: [
+      { id: 'stick', text: 'Avoid changing your mind or agreeing to visit "just for a day"' },
+      { id: 'defuse', text: 'Defuse accusations of neglecting the family by reiterating your love' }
+    ],
+    personas: [
+      {
+        id: 'linda-mother',
+        name: 'Linda (The Guilt-Tripping Mother)',
+        relationship: 'Mother',
+        prompt: `You are Linda, the user's mother. You are hurt, emphasize family tradition, and use guilt-tripping to make them feel selfish.`,
+        traits: {
+          formality: 30, verbosity: 65, interruptionFrequency: 50, emotionalVolatility: 75, startingTension: 55,
+          openness: 45, conscientiousness: 70, extraversion: 60, agreeableness: 50, neuroticism: 70
+        }
+      }
+    ]
+  },
+  {
+    id: 'romantic-breakup',
+    title: 'Romantic Breakup Discussion',
+    scenario: 'Romantic Relationships',
+    description: 'Break up with your partner of 8 months, Chloe. You feel your values and future directions do not align.',
+    objective: 'Deliver the break-up decision clearly and respectfully, handle her reaction with empathy, and establish a clean boundary.',
+    objectives: [
+      { id: 'break_decision', text: 'State the decision to end the relationship directly and clearly' },
+      { id: 'incompatibility', text: 'Frame the decision around incompatibility rather than blaming her' },
+      { id: 'appreciation', text: 'Express genuine appreciation for the time spent together' },
+      { id: 'contact_boundary', text: 'Set clear boundaries regarding contact/space moving forward' }
+    ],
+    hiddenObjectives: [
+      { id: 'negotiation', text: 'Do not agree to "try again" or take a temporary break' },
+      { id: 'no_circle', text: 'Avoid getting drawn into a circular argument about past mistakes' }
+    ],
+    personas: [
+      {
+        id: 'chloe-partner',
+        name: 'Chloe (The Heartbroken Partner)',
+        relationship: 'Partner',
+        prompt: `You are Chloe. You are deeply hurt, shocked, try to negotiate to stay together, and ask what you did wrong.`,
+        traits: {
+          formality: 20, verbosity: 50, interruptionFrequency: 35, emotionalVolatility: 80, startingTension: 70,
+          openness: 60, conscientiousness: 50, extraversion: 65, agreeableness: 45, neuroticism: 80
+        }
+      }
+    ]
+  },
+  {
+    id: 'deadline-renegotiation',
+    title: 'Project Deadline Renegotiation',
+    scenario: 'Professional Operations',
+    description: 'Inform client representative Rachel that the website development project needs a 2-week extension due to late asset deliveries.',
+    objective: 'Secure the 2-week extension without incurring financial penalties or losing the client\'s trust.',
+    objectives: [
+      { id: 'delays', text: 'Detail the specific delayed assets from the client\'s side' },
+      { id: 'milestones', text: 'Propose a new, realistic milestone schedule for the 2-week extension' },
+      { id: 'quality_risk', text: 'Highlight the risk of reduced quality if rushed without the extension' },
+      { id: 'commitment', text: 'Reaffirm your commitment to the project\'s success' }
+    ],
+    hiddenObjectives: [
+      { id: 'no_blame', text: 'Avoid taking responsibility for delays caused entirely by their team' },
+      { id: 'discount_limit', text: 'Resist offering a discount on the final invoice' }
+    ],
+    personas: [
+      {
+        id: 'rachel-client',
+        name: 'Rachel (The Impatient Client)',
+        relationship: 'Client Representative',
+        prompt: `You are Rachel, a client representative. You are under pressure from your bosses, impatient about marketing launch dates, and angry about delays.`,
+        traits: {
+          formality: 70, verbosity: 40, interruptionFrequency: 60, emotionalVolatility: 65, startingTension: 75,
+          openness: 40, conscientiousness: 75, extraversion: 55, agreeableness: 35, neuroticism: 65
+        }
+      }
+    ]
+  },
+  {
+    id: 'roommate-chore',
+    title: 'Roommate Cleanliness Conflict',
+    scenario: 'Shared Living',
+    description: 'Confront roommate Sam about dirty dishes stacking up in the sink and failure to clean shared spaces.',
+    objective: 'Agree on a structured, weekly chore schedule and boundary lines for shared space cleanliness.',
+    objectives: [
+      { id: 'dishes', text: 'Point out the dishes and kitchen mess without using accusatory language' },
+      { id: 'understand', text: 'Acknowledge his busy schedule or work hours to show understanding' },
+      { id: 'chart', text: 'Propose a written, shared weekly chore chart' },
+      { id: 'quick_clean', text: 'Get a verbal commitment to clean personal dishes within 24 hours of use' }
+    ],
+    hiddenObjectives: [
+      { id: 'no_volunteer', text: 'Do not volunteer to clean his share of the mess to keep the peace' },
+      { id: 'chores_only', text: 'Stay focused on the kitchen/chores and don\'t bring up unrelated historical issues' }
+    ],
+    personas: [
+      {
+        id: 'sam-roommate',
+        name: 'Sam (The Laid-back Roommate)',
+        relationship: 'Roommate',
+        prompt: `You are Sam, the user's roommate. You are relaxed, feel the user is slightly uptight about cleanliness, and make excuses about being too busy or tired.`,
+        traits: {
+          formality: 15, verbosity: 45, interruptionFrequency: 30, emotionalVolatility: 40, startingTension: 35,
+          openness: 50, conscientiousness: 30, extraversion: 50, agreeableness: 55, neuroticism: 40
+        }
+      }
+    ]
   }
 ];
 
@@ -352,6 +584,7 @@ export default function Home() {
   const [currentSpeaker, setCurrentSpeaker] = useState<'A' | 'B'>('A');
   const [refereeUserAName, setRefereeUserAName] = useState<string>('Employee');
   const [refereeUserBName, setRefereeUserBName] = useState<string>('Manager');
+  const [coachAssistantEnabled, setCoachAssistantEnabled] = useState<boolean>(true);
 
   // Simulation cockpit parameters
   const [activeScenario, setActiveScenario] = useState<Scenario | null>(null);
@@ -1633,6 +1866,49 @@ export default function Home() {
                         if (!preset) return null;
                         return (
                           <div className="flex flex-col gap-4">
+                            {/* Difficulty Selector */}
+                            <div>
+                              <span className="text-[10px] font-bold text-slate-450 uppercase tracking-widest block font-medium">Difficulty Level</span>
+                              <div className="flex gap-2 mt-2">
+                                <button
+                                  type="button"
+                                  onClick={() => setDifficulty('Easy')}
+                                  className={`flex-1 py-2 text-center rounded-lg text-xs font-bold transition-all border ${difficulty === 'Easy' ? 'bg-emerald-950/45 border-emerald-500 text-emerald-300 shadow' : 'bg-slate-950 border-slate-850 text-slate-400 hover:text-slate-200'}`}
+                                >
+                                  Cooperative
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={() => setDifficulty('Medium')}
+                                  className={`flex-1 py-2 text-center rounded-lg text-xs font-bold transition-all border ${difficulty === 'Medium' ? 'bg-indigo-950/45 border-indigo-500 text-indigo-300 shadow' : 'bg-slate-950 border-slate-850 text-slate-400 hover:text-slate-200'}`}
+                                >
+                                  Realistic
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={() => setDifficulty('Combative')}
+                                  className={`flex-1 py-2 text-center rounded-lg text-xs font-bold transition-all border ${difficulty === 'Combative' ? 'bg-red-950/45 border-red-500 text-red-300 shadow' : 'bg-slate-950 border-slate-850 text-slate-400 hover:text-slate-200'}`}
+                                >
+                                  Hostile
+                                </button>
+                              </div>
+                            </div>
+
+                            {/* Coach Assistant Toggle */}
+                            <div className="flex items-center justify-between border-t border-b border-slate-850 py-3 my-1">
+                              <div>
+                                <span className="text-[10px] font-bold text-slate-455 uppercase tracking-widest block font-medium">Real-Time Coach Assistant</span>
+                                <p className="text-[9px] text-slate-500 mt-0.5">Secondary AI provides private real-time guidance tips.</p>
+                              </div>
+                              <button
+                                type="button"
+                                onClick={() => setCoachAssistantEnabled(!coachAssistantEnabled)}
+                                className={`relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${coachAssistantEnabled ? 'bg-indigo-600' : 'bg-slate-800'}`}
+                              >
+                                <span className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${coachAssistantEnabled ? 'translate-x-4' : 'translate-x-0'}`} />
+                              </button>
+                            </div>
+
                             <div>
                               <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest block">Scenario Title</span>
                               <span className="text-lg font-bold text-white mt-0.5 block">{preset.title}</span>
@@ -1661,6 +1937,49 @@ export default function Home() {
                       })()
                     ) : (
                       <div className="flex flex-col gap-4">
+                        {/* Difficulty Selector in Custom Mode */}
+                        <div>
+                          <span className="text-[10px] font-bold text-slate-450 uppercase tracking-widest block font-medium">Difficulty Level</span>
+                          <div className="flex gap-2 mt-2">
+                            <button
+                              type="button"
+                              onClick={() => setDifficulty('Easy')}
+                              className={`flex-1 py-2 text-center rounded-lg text-xs font-bold transition-all border ${difficulty === 'Easy' ? 'bg-emerald-950/45 border-emerald-500 text-emerald-300 shadow' : 'bg-slate-950 border-slate-850 text-slate-400 hover:text-slate-200'}`}
+                            >
+                              Cooperative
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => setDifficulty('Medium')}
+                              className={`flex-1 py-2 text-center rounded-lg text-xs font-bold transition-all border ${difficulty === 'Medium' ? 'bg-indigo-950/45 border-indigo-500 text-indigo-300 shadow' : 'bg-slate-950 border-slate-850 text-slate-400 hover:text-slate-200'}`}
+                            >
+                              Realistic
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => setDifficulty('Combative')}
+                              className={`flex-1 py-2 text-center rounded-lg text-xs font-bold transition-all border ${difficulty === 'Combative' ? 'bg-red-950/45 border-red-500 text-red-300 shadow' : 'bg-slate-950 border-slate-850 text-slate-400 hover:text-slate-200'}`}
+                            >
+                              Hostile
+                            </button>
+                          </div>
+                        </div>
+
+                        {/* Coach Assistant Toggle */}
+                        <div className="flex items-center justify-between border-t border-b border-slate-850 py-3 my-1">
+                          <div>
+                            <span className="text-[10px] font-bold text-slate-455 uppercase tracking-widest block font-medium">Real-Time Coach Assistant</span>
+                            <p className="text-[9px] text-slate-500 mt-0.5">Secondary AI provides private real-time guidance tips.</p>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => setCoachAssistantEnabled(!coachAssistantEnabled)}
+                            className={`relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${coachAssistantEnabled ? 'bg-indigo-650' : 'bg-slate-800'}`}
+                          >
+                            <span className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${coachAssistantEnabled ? 'translate-x-4' : 'translate-x-0'}`} />
+                          </button>
+                        </div>
+
                         <div>
                           <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest block">Custom Blueprint</span>
                           <span className="text-lg font-bold text-white mt-0.5 block">{customTitle || '(Untitled...)'}</span>
@@ -1753,8 +2072,8 @@ export default function Home() {
                   </button>
                 </div>
 
-                {/* Middle Panel: Chat Stream, rewinding and tactical badges (6 cols) */}
-                <div className="lg:col-span-6 bg-slate-900 border border-slate-850 rounded-3xl flex flex-col overflow-hidden h-[620px] shadow-2xl relative">
+                {/* Middle Panel: Chat Stream, rewinding and tactical badges (6 cols / 9 cols) */}
+                <div className={`bg-slate-900 border border-slate-850 rounded-3xl flex flex-col overflow-hidden h-[620px] shadow-2xl relative ${coachAssistantEnabled ? 'lg:col-span-6' : 'lg:col-span-9'}`}>
                   <div className="bg-slate-950 border-b border-slate-850 px-6 py-4 flex items-center justify-between">
                     <div>
                       <h4 className="text-sm font-bold text-white">{refereeMode ? 'Referee Mode' : activeScenario.title}</h4>
@@ -1866,40 +2185,42 @@ export default function Home() {
                 </div>
 
                 {/* Right Panel: Live Coach Assist */}
-                <div className="lg:col-span-3 flex flex-col gap-4">
-                  <div className="bg-slate-900/70 border border-slate-850 rounded-2xl p-5 flex flex-col gap-3 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/5 rounded-full blur-2xl" />
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-350 border-b border-slate-850 pb-2">Live Coach Box</h4>
-                    <p className="bg-slate-950/60 border border-slate-850 p-4 rounded-xl text-xs text-slate-350 min-h-[90px] flex items-center">"{lastCoachingTip}"</p>
-                  </div>
-
-                  {showHintModal && (
-                    <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex flex-col gap-4 flex-1 shadow-xl">
-                      <div className="flex justify-between items-center border-b border-slate-800 pb-2">
-                        <span className="text-xs font-bold text-indigo-400 flex items-center gap-1"><Sparkles className="w-3.5 h-3.5" />Suggestions</span>
-                        <button onClick={() => setShowHintModal(false)} className="text-xs text-slate-500">Close</button>
-                      </div>
-
-                      {isGeneratingHints && <div className="text-center py-10 text-xs text-slate-550 animate-spin"><RefreshCw className="w-5 h-5 mx-auto" /></div>}
-                      {copilotHints && !isGeneratingHints && (
-                        <div className="flex flex-col gap-3 overflow-y-auto max-h-[350px]">
-                          <button onClick={() => handleSelectHint(copilotHints.empathetic)} className="text-left p-3 rounded-xl bg-slate-950 border border-slate-850 text-xs hover:border-indigo-500">
-                            <span className="text-[9px] font-bold text-emerald-450 uppercase">Empathetic</span>
-                            <p className="italic text-slate-300 mt-1">"{copilotHints.empathetic}"</p>
-                          </button>
-                          <button onClick={() => handleSelectHint(copilotHints.assertive)} className="text-left p-3 rounded-xl bg-slate-950 border border-slate-850 text-xs hover:border-indigo-500">
-                            <span className="text-[9px] font-bold text-indigo-400 uppercase">Assertive</span>
-                            <p className="italic text-slate-300 mt-1">"{copilotHints.assertive}"</p>
-                          </button>
-                          <button onClick={() => handleSelectHint(copilotHints.collaborative)} className="text-left p-3 rounded-xl bg-slate-950 border border-slate-850 text-xs hover:border-indigo-500">
-                            <span className="text-[9px] font-bold text-purple-400 uppercase">Collaborative</span>
-                            <p className="italic text-slate-300 mt-1">"{copilotHints.collaborative}"</p>
-                          </button>
-                        </div>
-                      )}
+                {coachAssistantEnabled && (
+                  <div className="lg:col-span-3 flex flex-col gap-4">
+                    <div className="bg-slate-900/70 border border-slate-850 rounded-2xl p-5 flex flex-col gap-3 relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/5 rounded-full blur-2xl" />
+                      <h4 className="text-xs font-bold uppercase tracking-wider text-slate-350 border-b border-slate-850 pb-2">Live Coach Box</h4>
+                      <p className="bg-slate-950/60 border border-slate-850 p-4 rounded-xl text-xs text-slate-350 min-h-[90px] flex items-center">"{lastCoachingTip}"</p>
                     </div>
-                  )}
-                </div>
+
+                    {showHintModal && (
+                      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex flex-col gap-4 flex-1 shadow-xl">
+                        <div className="flex justify-between items-center border-b border-slate-800 pb-2">
+                          <span className="text-xs font-bold text-indigo-400 flex items-center gap-1"><Sparkles className="w-3.5 h-3.5" />Suggestions</span>
+                          <button onClick={() => setShowHintModal(false)} className="text-xs text-slate-500">Close</button>
+                        </div>
+
+                        {isGeneratingHints && <div className="text-center py-10 text-xs text-slate-550 animate-spin"><RefreshCw className="w-5 h-5 mx-auto" /></div>}
+                        {copilotHints && !isGeneratingHints && (
+                          <div className="flex flex-col gap-3 overflow-y-auto max-h-[350px]">
+                            <button onClick={() => handleSelectHint(copilotHints.empathetic)} className="text-left p-3 rounded-xl bg-slate-955 border border-slate-850 text-xs hover:border-indigo-500">
+                              <span className="text-[9px] font-bold text-emerald-450 uppercase">Empathetic</span>
+                              <p className="italic text-slate-300 mt-1">"{copilotHints.empathetic}"</p>
+                            </button>
+                            <button onClick={() => handleSelectHint(copilotHints.assertive)} className="text-left p-3 rounded-xl bg-slate-955 border border-slate-850 text-xs hover:border-indigo-500">
+                              <span className="text-[9px] font-bold text-indigo-400 uppercase">Assertive</span>
+                              <p className="italic text-slate-300 mt-1">"{copilotHints.assertive}"</p>
+                            </button>
+                            <button onClick={() => handleSelectHint(copilotHints.collaborative)} className="text-left p-3 rounded-xl bg-slate-955 border border-slate-850 text-xs hover:border-indigo-500">
+                              <span className="text-[9px] font-bold text-purple-400 uppercase">Collaborative</span>
+                              <p className="italic text-slate-300 mt-1">"{copilotHints.collaborative}"</p>
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             )}
 
