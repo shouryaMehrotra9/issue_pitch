@@ -541,6 +541,7 @@ export default function Home() {
   const [difficulty, setDifficulty] = useState<'Easy' | 'Medium' | 'Combative'>('Medium');
   const [isCustomMode, setIsCustomMode] = useState<boolean>(false);
   const [copiedLink, setCopiedLink] = useState<boolean>(false);
+  const [showJudgeBanner, setShowJudgeBanner] = useState<boolean>(true);
 
   // Custom scenario editor state
   const [customTitle, setCustomTitle] = useState<string>('');
@@ -1690,7 +1691,46 @@ export default function Home() {
             
             {/* Setup Form */}
             {step === 'setup' && (
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start animate-in fade-in duration-300">
+              <div className="flex flex-col gap-6 w-full animate-in fade-in duration-300">
+                {showJudgeBanner && (
+                  <div className="bg-gradient-to-r from-indigo-950/60 via-purple-950/40 to-slate-900 border border-indigo-500/30 rounded-2xl p-5 relative overflow-hidden shadow-xl">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+                    <div className="flex justify-between items-start gap-4">
+                      <div className="flex gap-3">
+                        <div className="w-9 h-9 rounded-lg bg-indigo-500/20 flex items-center justify-center shrink-0 border border-indigo-500/30">
+                          <Sparkles className="w-4.5 h-4.5 text-indigo-400 animate-pulse" />
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-bold text-slate-100 flex items-center gap-1.5">
+                            🏆 Hackathon Judge Quick-Start Guide
+                          </h4>
+                          <p className="text-[11.5px] text-slate-355 leading-relaxed mt-1">
+                            Welcome to the <strong>EchoPersona V3 Cockpit</strong>. To review all features in 3 minutes, follow this sequence:
+                          </p>
+                          <ul className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-3.5 text-[10.5px] text-slate-400">
+                            <li className="bg-slate-955/40 border border-slate-850 p-2.5 rounded-xl">
+                              <span className="font-bold text-indigo-400 block mb-0.5">1. Select Preset & Config</span>
+                              Click any of the <strong>12 scenarios</strong> on the left. On the right, toggle difficulty and ensure <strong>Coach Assistant</strong> is ON.
+                            </li>
+                            <li className="bg-slate-955/40 border border-slate-850 p-2.5 rounded-xl">
+                              <span className="font-bold text-indigo-400 block mb-0.5">2. Dialogue & Time Machine</span>
+                              Type/speak a turn (use mic for WPM analysis). Click <strong>"Rewind here"</strong> to fork a branch, then compare branches in the <strong>Branches</strong> tab.
+                            </li>
+                            <li className="bg-slate-955/40 border border-slate-850 p-2.5 rounded-xl">
+                              <span className="font-bold text-indigo-400 block mb-0.5">3. Scorecard Heatmap</span>
+                              Click <strong>End Rehearsal</strong>. Scroll turn mindsets, view the <strong>interactive SVG heatmap</strong>, optimal paths, and coach highlights.
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <button type="button" onClick={() => setShowJudgeBanner(false)} className="text-xs text-slate-500 hover:text-slate-300 font-bold px-2 py-1 rounded hover:bg-slate-900 transition-all border border-transparent hover:border-slate-800 shrink-0">
+                        Hide
+                      </button>
+                    </div>
+                  </div>
+                )}
+                
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 <div className="lg:col-span-7 flex flex-col gap-5">
                   <div className="flex flex-col gap-1.5">
                     <span className="text-xs uppercase tracking-wider font-semibold text-indigo-400">Step 1: Rehearsal Specs</span>
@@ -2003,7 +2043,8 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            )}
+            </div>
+          )}
 
             {/* Active Rehearsal Room */}
             {step === 'rehearsal' && activeScenario && (
