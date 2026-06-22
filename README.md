@@ -7,6 +7,39 @@ Unlike generic roleplay chatbots, EchoPersona operates as a true training cockpi
 
 ---
 
+## 🏆 Hackathon Judge 3-Minute Walkthrough & Demo Pitch
+
+Follow this step-by-step roadmap to review and test all key V3 features in under 3 minutes:
+
+### ⏱️ Minute 0:00 - 0:45 | Zero-Config Login & Setup
+1. Open the app. You will land on the glassmorphic auth screen.
+2. Click **"Sign in as Demo Judge (Generates Mock JWT)"** to immediately bypass the Google Client ID scope setup and enter the training cockpit.
+3. In the **Simulator Configuration** screen, explore the **Scenario Library** on the left. It has 12 templates (e.g. *Salary Review Committee*, *Landlord Repair Dispute*, *Romantic Breakup*).
+4. On the right **Flight Settings** panel:
+   * Set the difficulty to **Realistic** or **Hostile** (which increases the AI's starting tension and volatility).
+   * Ensure the **Real-Time Coach Assistant** is toggled **ON**.
+   * Click **"Start Training Rehearsal"**.
+
+### ⏱️ Minute 0:45 - 1:45 | Dialogue, Voice WPM, and the Time Machine
+1. In the **Rehearsal Room**, look at the left panel showing the **Tension Gauge** (currently Defensive) and the **4 Active Objectives** checklist.
+2. Type or speak a line of dialogue. 
+   * *Tip:* Click the **mic icon** to dictate. When you submit, the app tracks your recording time and displays your calculated **Words Per Minute (WPM)** pacing in your chat bubble!
+3. Notice that the AI counterpart automatically routes replies between characters (e.g., Sarah and Bob in Salary Negotiation), tracks your positive communication tactics, and checks off objectives in real time.
+4. **Test the Time Machine**: Click **"Rewind here"** on a message to abandon the path. Send a new, more cooperative reply.
+5. Go to the **Branch Comparison** tab at the top of the screen: select your two timelines to compare the conversations side-by-side and see the score delta.
+
+### ⏱️ Minute 1:45 - 3:00 | Scoring, SVG Heatmap, and Mindset Replay
+1. Return to the Simulator and click **"End Rehearsal & Score"** to open the scorecard.
+2. Review the **Emotional Heatmap (SVG Timeline)**. Click on different nodes to view the counterpart's defensiveness and cooperation spikes.
+3. Use the **Mindset Replay Slider** to scroll turn-by-turn and peek inside the AI's brain to read its private `internalThoughts` at that exact moment.
+4. Scroll down to review the **Optimal Path Suggestions** (where the Coach reconstructs high-scoring statements you could have made) and the **Sports Highlights Commentary** (the commentator's turning-point breakdown).
+5. Explore the other tabs in the top header:
+   * **Drills**: Targeted, fast objection drill practice loops.
+   * **Skill Tree / Certify**: Progression tracks and badges.
+   * **Enterprise / Pricing**: Subscription packages, marketplace fees, and pay-as-you-go API metering.
+
+---
+
 ## 🚀 Advanced Simulator Features
 
 1. **🎚️ Trait-Based Sliders**:
